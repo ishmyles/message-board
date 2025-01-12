@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404: Page Not Found</title>
+    <link rel="stylesheet" href="/styles/error.css">
+    <link rel="stylesheet" href="/styles/styles.css">
+    <link rel="stylesheet" href="/styles/header.css">
+    <link rel="stylesheet" href="/styles/footer.css">
+</head>
+<body>
+    <%- include('partials/header') %>
+    <main>
+        <div class="content-card">
+            <h2 class="error-title"><%= errorCode %></h2>
+            <p class="error-msg"><%= errorMessage %></p>
+        </div>
+    </main>
+    <%- include('partials/footer') %>
+</body>
+</html>
