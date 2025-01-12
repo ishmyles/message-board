@@ -19,7 +19,7 @@ messageRouter.post(
 
     messageData.push(newMemo);
 
-    res.render("index.ejs", { messages: messageData });
+    res.redirect("/");
   })
 );
 
@@ -28,11 +28,19 @@ messageRouter.get(
   asyncHandler((req, res) => {
     const memoId = req.params.id;
     const index = messageData.findIndex((msg) => msg.id === memoId);
+    let nextMemoId = null;
+
+    if (index !== messageData.length - 1) {
+      nextMemoId = messageData[index + 1].id;
+    }
 
     if (index === -1) {
       throw new CustomNotFoundError("Memo not found!");
     } else {
-      res.render("memo.ejs", { message: messageData[index] });
+      res.render("memo.ejs", {
+        message: messageData[index],
+        nextMemo: nextMemoId,
+      });
     }
   })
 );

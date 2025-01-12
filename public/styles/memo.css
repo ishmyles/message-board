@@ -1,0 +1,12 @@
+.memo-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    margin-bottom: 1.5em;
+}
+
+/* .link {
+    display: inline-block;
+    color: #0066cc;
+} */

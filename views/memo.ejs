@@ -13,6 +13,14 @@
     <%- include('partials/header') %>
     <main>
         <div class="content-card">
+            <div class="memo-nav">
+                <a href="/" class="home-link">Back to home</a>
+                <% if (locals.nextMemo) { %>
+                    <% const nextId = "/messages/" + locals.nextMemo; %>
+                    <a href=<%= nextId %> class="home-link">View next memo</a>
+                <% } %>
+            </div>
+
             <% if (locals.message) { %>
                 <h3 class="memo-text"><%= message.text %></h3>
                 <div class="memo-info">
@@ -20,6 +28,7 @@
                     <p class="publishDate"><%= message.added %></p>
                 </div>
             <% } %>
+
         </div>
     </main>
     <%- include('partials/footer') %>
