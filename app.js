@@ -2,6 +2,7 @@ import express from "express";
 import path from "path";
 import { fileURLToPath } from "url";
 
+import messageData from "./data/messages.js";
 import messageRouter from "./routes/messagesRouter.js";
 
 const __filename = fileURLToPath(import.meta.url);
@@ -17,7 +18,7 @@ app.use(express.static(__dirname + "/public"));
 app.use("/messages", messageRouter);
 
 app.get("/", (req, res) => {
-  res.render("index.ejs");
+  res.render("index.ejs", { messages: messageData });
 });
 
 app.listen(PORT, () => console.log(`Server now listening at port ${PORT}`));

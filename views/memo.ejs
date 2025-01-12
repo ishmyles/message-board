@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Memo Form</title>
+    <link rel="stylesheet" href="/styles/memo.css">
+    <link rel="stylesheet" href="/styles/styles.css">
+    <link rel="stylesheet" href="/styles/header.css">
+    <link rel="stylesheet" href="/styles/footer.css">
+</head>
+<body>
+    <%- include('partials/header') %>
+    <main>
+        <div class="content-card">
+            <% if (locals.message) { %>
+                <h3 class="memo-text"><%= message.text %></h3>
+                <div class="memo-info">
+                    <p class="authorId">Posted by: <strong><%= message.user %></strong></p>
+                    <p class="publishDate"><%= message.added %></p>
+                </div>
+            <% } %>
+        </div>
+    </main>
+    <%- include('partials/footer') %>
+</body>
+</html>

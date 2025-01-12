@@ -11,7 +11,23 @@
 <body>
     <%- include('partials/header') %>
     <main>
-        <h1>HOMEPAGE</h1>
+        <div class="content-card">
+            <h2>Memos</h2>
+            <% if (locals.messages) { %>
+                <% locals.messages.forEach(msg => { %>
+                    <div class="inner-card">
+                        <% const msgLink = "/messages/" + msg.id %>
+                        <a href=<%= msgLink %>>
+                            <h3 class="memo-text"><%= msg.text %></h3>
+                            <div class="memo-info">
+                                <p class="authorId">Posted by: <strong><%= msg.user %></strong></p>
+                                <p class="publishDate"><%= msg.added %></p>
+                            </div>
+                        </a>
+                    </div>  
+                <% }) %>
+            <% } %>
+        </div>
     </main>
     <%- include('partials/footer') %>
 </body>
