@@ -2,6 +2,8 @@
 
 This repository containts a simple message board app utilising express and EJS.
 
+- Check out the [live version](https://message-board-production-27db.up.railway.app/)
+
 ## Technologies Used
 
 - Node
