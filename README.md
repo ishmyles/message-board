@@ -27,7 +27,7 @@ This repository containts a simple message board app utilising express and EJS.
 3. **Start the application**:
 
    ```bash
-   npm run dev
+   node --watch app.js
    ```
 
    The app will be accessible at `http://localhost:3000`.
